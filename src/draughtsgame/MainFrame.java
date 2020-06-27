@@ -9,6 +9,12 @@ import java.awt.event.KeyListener;
 import java.io.IOException;
 
 public class MainFrame implements KeyListener {
+    static public Music a;
+
+    public void playmusic() {
+        a = Music.playSound("E:\\draughts\\music\\Mainmusic2.wav");
+        a.play();
+    }
 
     class bg extends JPanel {
         Image imgbackground;
@@ -28,9 +34,10 @@ public class MainFrame implements KeyListener {
         Image achiv;
         Image imgicon;
 
+
         public bg() {
-            imgicon = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Backgrounds\\icon.png");
-            imgbackground = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Backgrounds\\mainmenubg.jpg");
+            imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.png");
+            imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainmenubg.jpg");
             imgdoor = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\door.png");
             imgsettings = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\gear.png");
             imgMOn = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\musicOn.png");
@@ -54,9 +61,9 @@ public class MainFrame implements KeyListener {
             //  g.drawImage(imgMOn, 720, 10, this);
             //  g.drawImage(imgque, 720, 110, this);
             g.drawImage(name, 150, 30, this);
-          //  g.drawImage(start, 250, 120, this);
+            //  g.drawImage(start, 250, 120, this);
             g.drawImage(ng, 290, 133, this);
-        //    g.drawImage(imgsettings, 247, 180, this);
+            //    g.drawImage(imgsettings, 247, 180, this);
             g.drawImage(settingsn, 291, 193, this);
             //  g.drawImage(imgdoor, 248, 305, this);
             g.drawImage(exitname, 291, 320, this);
@@ -144,21 +151,6 @@ public class MainFrame implements KeyListener {
         //
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        class ClickButtons implements ActionListener {
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.exit(0);
-            }
-        }
-        //
-        class ClickButtons1 implements ActionListener {
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Info");
-            }
-        }
-        //
         class ClickButtons2 implements ActionListener {
 
             public void actionPerformed(ActionEvent arg0) {
@@ -178,7 +170,7 @@ public class MainFrame implements KeyListener {
 
             public void actionPerformed(ActionEvent arg0) {
                 System.out.println("Beta Test Music");
-
+                a.stop();
             }
         }
         //
@@ -199,9 +191,13 @@ public class MainFrame implements KeyListener {
 
             }
         }
-        //
-        buttonExit.addActionListener(new ClickButtons());
-        buttonInfo.addActionListener(new ClickButtons1());
+        //         System.out.println("Beta Test Info");
+        buttonExit.addActionListener((a1) -> {
+            System.exit(0);
+        });
+        buttonInfo.addActionListener((a1) -> {
+            System.out.println("Beta Test Info");
+        });
         buttonHelp.addActionListener(new ClickButtons2());
         buttonAchi.addActionListener(new ClickButtons3());
         buttonMusic.addActionListener(new ClickButtons4());
