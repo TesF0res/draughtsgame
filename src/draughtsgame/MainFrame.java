@@ -38,20 +38,20 @@ public class MainFrame implements KeyListener {
         public bg() {
             imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.png");
             imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainmenubg.jpg");
-            imgdoor = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\door.png");
-            imgsettings = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\gear.png");
-            imgMOn = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\musicOn.png");
-            imgMOf = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\musicOff.png");
-            imgque = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\question.png");
-            imgtro = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\trophy.png");
-            name = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\name.png");
-            invs = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\invs_space.png");
-            start = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\forward.png");
-            imginfo = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\information.png");
-            ng = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\start.png");
-            settingsn = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\setname.png");
-            exitname = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\exit.png");
-            achiv = Toolkit.getDefaultToolkit().createImage("E:\\draughts\\images\\Elements\\achi.png");
+            imgdoor = Toolkit.getDefaultToolkit().createImage("images/Elements/door.png");
+            imgsettings = Toolkit.getDefaultToolkit().createImage("images/Elements/gear.png");
+            imgMOn = Toolkit.getDefaultToolkit().createImage("images/Elements/musicOn.png");
+            imgMOf = Toolkit.getDefaultToolkit().createImage("images/Elements/musicOff.png");
+            imgque = Toolkit.getDefaultToolkit().createImage("images/Elements/question.png");
+            imgtro = Toolkit.getDefaultToolkit().createImage("images/Elements/trophy.png");
+            name = Toolkit.getDefaultToolkit().createImage("images/Elements/name.png");
+            invs = Toolkit.getDefaultToolkit().createImage("images/Elements/invs_space.png");
+            start = Toolkit.getDefaultToolkit().createImage("images/Elements/forward.png");
+            imginfo = Toolkit.getDefaultToolkit().createImage("images/Elements/information.png");
+            ng = Toolkit.getDefaultToolkit().createImage("images/Elements/start.png");
+            settingsn = Toolkit.getDefaultToolkit().createImage("images/Elements/setname.png");
+            exitname = Toolkit.getDefaultToolkit().createImage("images/Elements/exit.png");
+            achiv = Toolkit.getDefaultToolkit().createImage("images/Elements/achi.png");
         }
 
 
