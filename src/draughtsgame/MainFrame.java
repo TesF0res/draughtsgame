@@ -76,7 +76,7 @@ public class MainFrame implements KeyListener {
     }
 
     public void initFrame() throws IOException {
-
+        final int[] off = {0};
         Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
         int vert = sSize.height;
         int hor = sSize.width;
@@ -151,58 +151,40 @@ public class MainFrame implements KeyListener {
         //
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        class ClickButtons2 implements ActionListener {
 
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Help");
-            }
-        }
-        //
-        class ClickButtons3 implements ActionListener {
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Achi");
-            }
-        }
-        //
-        class ClickButtons4 implements ActionListener {
-
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Music");
-                a.stop();
-            }
-        }
-        //
-        class ClickButtons5 implements ActionListener {
-
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Settings");
-
-            }
-        }
-        //
-        class ClickButtons6 implements ActionListener {
-
-
-            public void actionPerformed(ActionEvent arg0) {
-                System.out.println("Beta Test Start");
-
-            }
-        }
-        //         System.out.println("Beta Test Info");
         buttonExit.addActionListener((a1) -> {
             System.exit(0);
         });
         buttonInfo.addActionListener((a1) -> {
             System.out.println("Beta Test Info");
         });
-        buttonHelp.addActionListener(new ClickButtons2());
-        buttonAchi.addActionListener(new ClickButtons3());
-        buttonMusic.addActionListener(new ClickButtons4());
-        buttonSettings.addActionListener(new ClickButtons5());
-        buttonStart.addActionListener(new ClickButtons6());
+        buttonHelp.addActionListener((a1) -> {
+            System.out.println("Beta Test Help");
+        });
+        buttonAchi.addActionListener((a1) -> {
+            System.out.println("Beta Test Achi");
+        });
+        buttonMusic.addActionListener((a1) -> {
+
+            System.out.println("Beta Test Music");
+            if (off[0] == 0) {
+                a.stop();
+                buttonMusic.setIcon(new ImageIcon("images/Elements/musicOff.png"));
+                off[0] += 1;
+            } else if (off[0] == 1) {
+                a.play();
+                buttonMusic.setIcon(new ImageIcon("images/Elements/musicOn.png"));
+                off[0] -= 1;
+            }
+
+
+        });
+        buttonSettings.addActionListener((a1) -> {
+            System.out.println("Beta Test Settings");
+        });
+        buttonStart.addActionListener((a1) -> {
+            System.out.println("Beta Test Start");
+        });
         f.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
 
         f.setSize(800, 600);
