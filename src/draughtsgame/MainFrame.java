@@ -12,7 +12,7 @@ public class MainFrame implements KeyListener {
     static public Music a;
 
     public void playmusic() {
-        a = Music.playSound("E:\\draughts\\music\\Mainmusic2.wav");
+        a = Music.playSound("E:\\draughtsgame\\music\\Mainmusic2.wav");
         a.play();
     }
 
@@ -157,6 +157,12 @@ public class MainFrame implements KeyListener {
         });
         buttonInfo.addActionListener((a1) -> {
             System.out.println("Beta Test Info");
+            JOptionPane.showMessageDialog(f,
+                    "Версия:0.2.1\n"
+                            + "Создатель:TesF0res\n" +
+                            "GitHub:https://github.com/TesF0res",
+                    "Информация",
+                    JOptionPane.PLAIN_MESSAGE);
         });
         buttonHelp.addActionListener((a1) -> {
             System.out.println("Beta Test Help");
