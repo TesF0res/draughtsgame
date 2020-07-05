@@ -12,6 +12,7 @@ public class MainFrame implements KeyListener {
     static public Music a;
 
     public void playmusic() {
+        //1. Сделать рандомный плейлист 2.Сделать нормальную остановку и продолжение 3. Разобраться с размером и портом
         a = Music.playSound("E:\\draughtsgame\\music\\Mainmusic2.wav");
         a.play();
     }
@@ -38,6 +39,7 @@ public class MainFrame implements KeyListener {
         public bg() {
             imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.png");
             imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainmenubg.jpg");
+            //
             imgdoor = Toolkit.getDefaultToolkit().createImage("images/Elements/door.png");
             imgsettings = Toolkit.getDefaultToolkit().createImage("images/Elements/gear.png");
             imgMOn = Toolkit.getDefaultToolkit().createImage("images/Elements/musicOn.png");
@@ -75,87 +77,96 @@ public class MainFrame implements KeyListener {
 
     }
 
-    public void initFrame() throws IOException {
-        final int[] off = {0};
-        Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int vert = sSize.height;
-        int hor = sSize.width;
-        JFrame f = new JFrame("Шашки(0.1)");
-        bg p = new bg();
-        p.setLayout(null);
-        f.add(p);
-        f.setIconImage(p.imgicon);
-        //
-        JButton buttonExit = new JButton();
-        buttonExit.setSize(45, 45);
-        buttonExit.setPreferredSize(new Dimension(10, 10));
-        buttonExit.setLocation(250, 306);
-        buttonExit.setIcon(new ImageIcon("images/Elements/door.png"));
-        buttonExit.setBorder(BorderFactory.createEmptyBorder());
-        buttonExit.setContentAreaFilled(false);
-        p.add(buttonExit);
-        //
-        JButton buttonInfo = new JButton();
-        buttonInfo.setSize(45, 45);
-        buttonInfo.setPreferredSize(new Dimension(10, 10));
-        buttonInfo.setLocation(723, 60);
-        buttonInfo.setIcon(new ImageIcon("images/Elements/information.png"));
-        buttonInfo.setBorder(BorderFactory.createEmptyBorder());
-        buttonInfo.setContentAreaFilled(false);
-        p.add(buttonInfo);
-        //
-        JButton buttonHelp = new JButton();
-        buttonHelp.setSize(45, 45);
-        buttonHelp.setPreferredSize(new Dimension(10, 10));
-        buttonHelp.setLocation(723, 110);
-        buttonHelp.setIcon(new ImageIcon("images/Elements/question.png"));
-        buttonHelp.setBorder(BorderFactory.createEmptyBorder());
-        buttonHelp.setContentAreaFilled(false);
-        p.add(buttonHelp);
-        //
-        JButton buttonAchi = new JButton();
-        buttonAchi.setSize(45, 45);
-        buttonAchi.setPreferredSize(new Dimension(10, 10));
-        buttonAchi.setLocation(251, 243);
-        buttonAchi.setIcon(new ImageIcon("images/Elements/trophy.png"));
-        buttonAchi.setBorder(BorderFactory.createEmptyBorder());
-        buttonAchi.setContentAreaFilled(false);
-        p.add(buttonAchi);
-        //
-        JButton buttonMusic = new JButton();
-        buttonMusic.setSize(45, 45);
-        buttonMusic.setPreferredSize(new Dimension(10, 10));
-        buttonMusic.setLocation(722, 10);
-        buttonMusic.setIcon(new ImageIcon("images/Elements/musicOn.png"));
-        buttonMusic.setBorder(BorderFactory.createEmptyBorder());
-        buttonMusic.setContentAreaFilled(false);
-        p.add(buttonMusic);
-        //
-        JButton buttonSettings = new JButton();
-        buttonSettings.setSize(45, 45);
-        buttonSettings.setPreferredSize(new Dimension(10, 10));
-        buttonSettings.setLocation(250, 183);
-        buttonSettings.setIcon(new ImageIcon("images/Elements/gear.png"));
-        buttonSettings.setBorder(BorderFactory.createEmptyBorder());
-        buttonSettings.setContentAreaFilled(false);
-        p.add(buttonSettings);
-        //
-        JButton buttonStart = new JButton();
-        buttonStart.setSize(45, 45);
-        buttonStart.setPreferredSize(new Dimension(10, 10));
-        buttonStart.setLocation(253, 123);
-        buttonStart.setIcon(new ImageIcon("images/Elements/forward.png"));
-        buttonStart.setBorder(BorderFactory.createEmptyBorder());
-        buttonStart.setContentAreaFilled(false);
-        p.add(buttonStart);
-        //
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    class bg1 extends JPanel {
+        Image imgINFOICON;
 
-        buttonExit.addActionListener((a1) -> {
-            System.exit(0);
-        });
-        buttonInfo.addActionListener((a1) -> {
+        public bg1() {
+            imgINFOICON = Toolkit.getDefaultToolkit().createImage("images/Elements/INFOICON.png");
+
+        }
+    }
+        public void initFrame() throws IOException {
+            final int[] off = {0};
+            Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
+            int vert = sSize.height;
+            int hor = sSize.width;
+            JFrame f = new JFrame("Шашки(0.1)");
+            bg1 p1 = new bg1();
+            bg p = new bg();
+            p.setLayout(null);
+            f.add(p);
+            f.setIconImage(p.imgicon);
+            //
+            JButton buttonExit = new JButton();
+            buttonExit.setSize(45, 45);
+            buttonExit.setPreferredSize(new Dimension(10, 10));
+            buttonExit.setLocation(250, 306);
+            buttonExit.setIcon(new ImageIcon("images/Elements/door.png"));
+            buttonExit.setBorder(BorderFactory.createEmptyBorder());
+            buttonExit.setContentAreaFilled(false);
+            p.add(buttonExit);
+            //
+            JButton buttonInfo = new JButton();
+            buttonInfo.setSize(45, 45);
+            buttonInfo.setPreferredSize(new Dimension(10, 10));
+            buttonInfo.setLocation(723, 60);
+            buttonInfo.setIcon(new ImageIcon("images/Elements/information.png"));
+            buttonInfo.setBorder(BorderFactory.createEmptyBorder());
+            buttonInfo.setContentAreaFilled(false);
+            p.add(buttonInfo);
+            //
+            JButton buttonHelp = new JButton();
+            buttonHelp.setSize(45, 45);
+            buttonHelp.setPreferredSize(new Dimension(10, 10));
+            buttonHelp.setLocation(723, 110);
+            buttonHelp.setIcon(new ImageIcon("images/Elements/question.png"));
+            buttonHelp.setBorder(BorderFactory.createEmptyBorder());
+            buttonHelp.setContentAreaFilled(false);
+            p.add(buttonHelp);
+            //
+            JButton buttonAchi = new JButton();
+            buttonAchi.setSize(45, 45);
+            buttonAchi.setPreferredSize(new Dimension(10, 10));
+            buttonAchi.setLocation(251, 243);
+            buttonAchi.setIcon(new ImageIcon("images/Elements/trophy.png"));
+            buttonAchi.setBorder(BorderFactory.createEmptyBorder());
+            buttonAchi.setContentAreaFilled(false);
+            p.add(buttonAchi);
+            //
+            JButton buttonMusic = new JButton();
+            buttonMusic.setSize(45, 45);
+            buttonMusic.setPreferredSize(new Dimension(10, 10));
+            buttonMusic.setLocation(722, 10);
+            buttonMusic.setIcon(new ImageIcon("images/Elements/musicOn.png"));
+            buttonMusic.setBorder(BorderFactory.createEmptyBorder());
+            buttonMusic.setContentAreaFilled(false);
+            p.add(buttonMusic);
+            //
+            JButton buttonSettings = new JButton();
+            buttonSettings.setSize(45, 45);
+            buttonSettings.setPreferredSize(new Dimension(10, 10));
+            buttonSettings.setLocation(250, 183);
+            buttonSettings.setIcon(new ImageIcon("images/Elements/gear.png"));
+            buttonSettings.setBorder(BorderFactory.createEmptyBorder());
+            buttonSettings.setContentAreaFilled(false);
+            p.add(buttonSettings);
+            //
+            JButton buttonStart = new JButton();
+            buttonStart.setSize(45, 45);
+            buttonStart.setPreferredSize(new Dimension(10, 10));
+            buttonStart.setLocation(253, 123);
+            buttonStart.setIcon(new ImageIcon("images/Elements/forward.png"));
+            buttonStart.setBorder(BorderFactory.createEmptyBorder());
+            buttonStart.setContentAreaFilled(false);
+            p.add(buttonStart);
+            //
+            f.setVisible(true);
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            buttonExit.addActionListener((a1) -> {
+                System.exit(0);
+            });
+            buttonInfo.addActionListener((a1) -> {
 
        /*   System.out.println("Beta Test Info");
             JOptionPane.showMessageDialog(f,
@@ -165,68 +176,76 @@ public class MainFrame implements KeyListener {
                     "Информация",
                     JOptionPane.PLAIN_MESSAGE);
             */
-       //1.Настроить чуть выше центра; 2. Добавить иконку; 3. Добавить фон; 4. Добавить текст/Активные ссылки;
-            JFrame frameinfo = new JFrame("Information");
-            frameinfo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            JLabel label = new JLabel("Version:0.2.2");
-            frameinfo.getContentPane().add(label);
-            frameinfo.setPreferredSize(new Dimension(200, 100));
-            frameinfo.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
-            frameinfo.pack();
-            frameinfo.setVisible(true);
-        });
-        buttonHelp.addActionListener((a1) -> {
-            System.out.println("Beta Test Help");
-        });
-        buttonAchi.addActionListener((a1) -> {
-            System.out.println("Beta Test Achi");
-        });
-        buttonMusic.addActionListener((a1) -> {
+                //1.Настроить размер и позицию +; 2. Добавить иконку+; 3. Добавить фон-; 4. Добавить текст/Активные ссылки-;
+                JFrame frameinfo = new JFrame("Information");
+                frameinfo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frameinfo.setPreferredSize(new Dimension(800, 600));
+                frameinfo.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
+                frameinfo.add(p1);
+                p1.setLayout(null);
+                p1.removeAll();
+                frameinfo.setIconImage(p1.imgINFOICON);
+                JLabel label = new JLabel("Version:0.2.3");
+                frameinfo.getContentPane().add(label);
+                frameinfo.pack();
+                frameinfo.setVisible(true);
+            });
+            buttonHelp.addActionListener((a1) -> {
+                System.out.println("Beta Test Help");
+                //1.ДЕЛАТЬ  ПОСЛЕ МУЗЫКИ И ИНФО-ТАБЛИЦЫ
+            });
+            buttonAchi.addActionListener((a1) -> {
+                System.out.println("Beta Test Achi");
+                //1.ДЕЛАТЬ  ПОСЛЕ ПОМОЩИ
+            });
+            buttonMusic.addActionListener((a1) -> {
 
-            System.out.println("Beta Test Music");
-            if (off[0] == 0) {
-                a.stop();
-                buttonMusic.setIcon(new ImageIcon("images/Elements/musicOff.png"));
-                off[0] += 1;
-            } else if (off[0] == 1) {
-                a.play();
-                buttonMusic.setIcon(new ImageIcon("images/Elements/musicOn.png"));
-                off[0] -= 1;
-            }
-
-
-        });
-        buttonSettings.addActionListener((a1) -> {
-            System.out.println("Beta Test Settings");
-        });
-        buttonStart.addActionListener((a1) -> {
-            System.out.println("Beta Test Start");
-        });
-        f.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
-
-        f.setSize(800, 600);
+                System.out.println("Beta Test Music");
+                if (off[0] == 0) {
+                    a.stop();
+                    buttonMusic.setIcon(new ImageIcon("images/Elements/musicOff.png"));
+                    off[0] += 1;
+                } else if (off[0] == 1) {
+                    a.play();
+                    buttonMusic.setIcon(new ImageIcon("images/Elements/musicOn.png"));
+                    off[0] -= 1;
+                }
 
 
-        ;
+            });
+            buttonSettings.addActionListener((a1) -> {
+                System.out.println("Beta Test Settings");
+                //1.ДЕЛАТЬ ПОСЛЕ ДОСТИЖЕНИЙ
+            });
+            buttonStart.addActionListener((a1) -> {
+                System.out.println("Beta Test Start");
+                //1.ДЕЛАТЬ ПОСЛЕ НАСТРОЕК
+            });
+            f.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
+
+            f.setSize(800, 600);
+
+
+            ;
 //
 
-        f.setResizable(false);
+            f.setResizable(false);
+
+
+        }
+
+        public void keyTyped(KeyEvent e) {
+
+        }
+
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+
+        public void keyReleased(KeyEvent e) {
+
+        }
 
 
     }
-
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-
-    public void keyReleased(KeyEvent e) {
-
-    }
-
-
-}
