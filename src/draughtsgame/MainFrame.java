@@ -156,13 +156,24 @@ public class MainFrame implements KeyListener {
             System.exit(0);
         });
         buttonInfo.addActionListener((a1) -> {
-            System.out.println("Beta Test Info");
+
+       /*   System.out.println("Beta Test Info");
             JOptionPane.showMessageDialog(f,
                     "Версия:0.2.1\n"
                             + "Создатель:TesF0res\n" +
                             "GitHub:https://github.com/TesF0res",
                     "Информация",
                     JOptionPane.PLAIN_MESSAGE);
+            */
+       //1.Настроить чуть выше центра; 2. Добавить иконку; 3. Добавить фон; 4. Добавить текст/Активные ссылки;
+            JFrame frameinfo = new JFrame("Information");
+            frameinfo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JLabel label = new JLabel("Version:0.2.2");
+            frameinfo.getContentPane().add(label);
+            frameinfo.setPreferredSize(new Dimension(200, 100));
+            frameinfo.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
+            frameinfo.pack();
+            frameinfo.setVisible(true);
         });
         buttonHelp.addActionListener((a1) -> {
             System.out.println("Beta Test Help");
