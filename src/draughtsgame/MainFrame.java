@@ -11,6 +11,7 @@ import java.io.IOException;
 public class MainFrame implements KeyListener {
     static public Music a;
 
+
     public void playmusic() {
         //1. Сделать рандомный плейлист 2.Сделать нормальную остановку и продолжение 3. Разобраться с размером и портом
         a = Music.playSound("E:\\draughtsgame\\music\\Mainmusic2.wav");
@@ -18,7 +19,7 @@ public class MainFrame implements KeyListener {
     }
 
     class bg extends JPanel {
-        Image imgbackground;
+        Image  imgbackground;
         Image imgdoor;
         Image imgsettings;
         Image imginfo;
@@ -37,8 +38,9 @@ public class MainFrame implements KeyListener {
 
 
         public bg() {
-            imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.png");
-            imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainmenubg.jpg");
+            imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.jpg");
+            imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainback1.jpg");
+
             //
             imgdoor = Toolkit.getDefaultToolkit().createImage("images/Elements/door.png");
             imgsettings = Toolkit.getDefaultToolkit().createImage("images/Elements/gear.png");
@@ -90,7 +92,7 @@ public class MainFrame implements KeyListener {
             Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
             int vert = sSize.height;
             int hor = sSize.width;
-            JFrame f = new JFrame("Шашки(0.1)");
+            JFrame f = new JFrame("Шашки(0.2.5)");
             bg1 p1 = new bg1();
             bg p = new bg();
             p.setLayout(null);
@@ -178,6 +180,7 @@ public class MainFrame implements KeyListener {
             */
                 //1.Настроить размер и позицию +; 2. Добавить иконку+; 3. Добавить фон-; 4. Добавить текст/Активные ссылки-;
                 JFrame frameinfo = new JFrame("Information");
+            //    f.setVisible(false);
                 frameinfo.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frameinfo.setPreferredSize(new Dimension(800, 600));
                 frameinfo.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
@@ -185,7 +188,7 @@ public class MainFrame implements KeyListener {
                 p1.setLayout(null);
                 p1.removeAll();
                 frameinfo.setIconImage(p1.imgINFOICON);
-                JLabel label = new JLabel("Version:0.2.3");
+                JLabel label = new JLabel("Version:0.2.5");
                 frameinfo.getContentPane().add(label);
                 frameinfo.pack();
                 frameinfo.setVisible(true);
