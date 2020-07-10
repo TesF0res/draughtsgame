@@ -18,6 +18,8 @@ public class MainFrame implements KeyListener {
         a.play();
     }
 
+
+
     class bg extends JPanel {
         Image  imgbackground;
         Image imgdoor;
@@ -39,7 +41,7 @@ public class MainFrame implements KeyListener {
 
         public bg() {
             imgicon = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/icon.jpg");
-            imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/mainback1.jpg");
+            imgbackground = Toolkit.getDefaultToolkit().createImage("images/Backgrounds/test2.jpg");
 
             //
             imgdoor = Toolkit.getDefaultToolkit().createImage("images/Elements/door.png");
@@ -88,6 +90,7 @@ public class MainFrame implements KeyListener {
         }
     }
         public void initFrame() throws IOException {
+
             final int[] off = {0};
             Dimension sSize = Toolkit.getDefaultToolkit().getScreenSize();
             int vert = sSize.height;
@@ -98,6 +101,10 @@ public class MainFrame implements KeyListener {
             p.setLayout(null);
             f.add(p);
             f.setIconImage(p.imgicon);
+            //
+            Timer t = new Timer(4000, new AL(f));
+            t.setRepeats(false);
+            t.start();
             //
             JButton buttonExit = new JButton();
             buttonExit.setSize(45, 45);
@@ -162,7 +169,7 @@ public class MainFrame implements KeyListener {
             buttonStart.setContentAreaFilled(false);
             p.add(buttonStart);
             //
-            f.setVisible(true);
+            f.setVisible(false);
             f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
             buttonExit.addActionListener((a1) -> {
@@ -224,9 +231,9 @@ public class MainFrame implements KeyListener {
                 System.out.println("Beta Test Start");
                 //1.ДЕЛАТЬ ПОСЛЕ НАСТРОЕК
             });
-            f.setLocation(hor / 3 / 2 + 240, vert / 3 / 2);
+            f.setLocation(360,120);
 
-            f.setSize(800, 600);
+            f.setSize(1200, 800);
 
 
             ;
@@ -249,6 +256,19 @@ public class MainFrame implements KeyListener {
         public void keyReleased(KeyEvent e) {
 
         }
+    class AL implements ActionListener {
+        public final JFrame frameToHide;
 
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            frameToHide.setVisible(true);
+            playmusic();
+        }
+
+        public AL(JFrame target) {
+            this.frameToHide = target;
+        }
+
+    }
 
     }

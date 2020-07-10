@@ -25,12 +25,13 @@ public class LogoGame {
 
     public void initFrame() throws IOException {
         JFrame f = new JFrame("Шашки(0.2.5)");
-        int vert = 748;
-        int hor = 1128;
+        int vert = 800;
+        int hor = 1200;
         bg p = new bg();
         p.setLayout(null);
         f.add(p);
         f.setPreferredSize(new Dimension(hor, vert));
+        f.setLocation(360,120);
         f.pack();
         p.setOpaque(false);
         f.setIconImage(p.imgicon);

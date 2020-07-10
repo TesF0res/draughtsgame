@@ -30,6 +30,7 @@ public class Music implements AutoCloseable {
 
     }
 
+
     // true если звук успешно загружен, false если произошла ошибка
     public boolean isReleased() {
         return released;
