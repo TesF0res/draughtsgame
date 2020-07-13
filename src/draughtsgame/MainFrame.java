@@ -73,7 +73,6 @@ public class MainFrame implements KeyListener {
         public void paintComponent(Graphics g) {
 
 
-
             if (ran == 0) {
                 g.drawImage(imgbackground1, 0, 0, this);
             } else if (ran == 1) {
@@ -161,10 +160,10 @@ public class MainFrame implements KeyListener {
         p.add(buttonHelp);
         //
         JButton buttonAchi = new JButton();
-        buttonAchi.setSize(45, 45);
+        buttonAchi.setSize(90, 90);
         buttonAchi.setPreferredSize(new Dimension(10, 10));
         buttonAchi.setLocation(251, 243);
-        buttonAchi.setIcon(new ImageIcon("images/Elements/trophy.png"));
+        buttonAchi.setIcon(new ImageIcon("images/Elements/trophy2x.png"));
         buttonAchi.setBorder(BorderFactory.createEmptyBorder());
         buttonAchi.setContentAreaFilled(false);
         p.add(buttonAchi);
@@ -283,7 +282,9 @@ public class MainFrame implements KeyListener {
     public void keyReleased(KeyEvent e) {
 
     }
+
     private int ran;
+
     class AL implements ActionListener {
         public final JFrame frameToHide;
 
